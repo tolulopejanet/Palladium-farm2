@@ -7,11 +7,17 @@ import About from "./routes/About";
 import Service from "./routes/Service";
 import Contact from "./routes/Contact";
 import Footer from "./components/Footer";
+import Main from "./components/Main";
+import Features from "./components/Feature";
+import Stats from "./components/Stats";
 
 function Home() {
   return (
     <>
       <Herosection />
+      <Main />
+      <Stats />
+      <Features />
     </>
   );
 }

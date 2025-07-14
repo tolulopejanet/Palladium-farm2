@@ -41,22 +41,22 @@ const Herosection = () => {
         style={{ backgroundImage: `url('${slides[current].image}')` }}
       />
 
-      {/* ✅ Text Content */}
+      {/* Text Content */}
       <div className="relative z-10 h-full flex items-center px-12">
-        <div className="bg-white p-4 lg:p-8 rounded-lg shadow-lg w-full max-w-md md:w-2/3 mt-50 md:mt-40">
-          <h1 className="lg:text-4xl text-2xl font-bold text-green-800 lg:mb-4 mb-2">
+        <div className="bg-white opacity-80 p-4 lg:p-8 rounded-lg shadow-lg w-full max-w-md md:w-2/3 mt-50 md:mt-40">
+          <h1 className="lg:text-4xl text-2xl font-bold text-[#2B7810] lg:mb-4 mb-2">
             {slides[current].title}
           </h1>
           <p className="text-gray-800 lg:text-lg text-[14px]">
             {slides[current].description}
           </p>
-          <button className="lg:mt-6 mt-3 px-6 py-2 bg-green-700 text-white rounded-full hover:bg-green-800 transition">
+          <button className="lg:mt-6 mt-3 px-6 py-2 bg-[#2B7810] text-white rounded-full hover:bg-green-800 transition">
             Learn More
           </button>
         </div>
       </div>
 
-      {/* ✅ Dots */}
+      {/* Dots */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
         {slides.map((_, index) => (
           <button
