@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Features from "./components/Feature";
 import Stats from "./components/Stats";
+import ProductGallery from "./components/ProductGallery";
+import ProductCat from "./components/ProductCat";
 
 function Home() {
   return (
@@ -17,7 +19,9 @@ function Home() {
       <Herosection />
       <Main />
       <Stats />
-      <Features />
+      <ProductCat />
+      <ProductGallery />
+      {/* <Features /> */}
     </>
   );
 }

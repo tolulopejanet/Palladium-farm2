@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+.card {
+  @apply cursor-pointer bg-gradient-to-t from-white/20 w-72 h-64 rounded-xl shadow-xl self-end;
+}
+.card-active {
+  @apply h-96;
+}
+.card-active .logo {
+  @apply bg-green-100 text-[#2B7810];
+}
+.logo {
+  @apply text-5xl mt-2 max-w-[5rem] mx-auto min-w-[5rem] min-h-[5rem] rounded-full bg-green-200 text-green-600 grid place-items-center;
+}
+.para {
+  @apply mt-3;
+}

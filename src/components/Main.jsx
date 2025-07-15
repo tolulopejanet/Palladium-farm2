@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Main = () => {
   return (
-    <div className="px-12 pt-24 pb-8 space-y-16">
+    <div className="px-12 pt-24 space-y-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center">
           <h1 className="font-bold text-5xl mb-6 text-[#2B7810]">
@@ -31,13 +31,6 @@ const Main = () => {
             className="w-full h-[50vh] rounded-lg object-cover"
           />
         </div>
-      </div>
-
-      <div className="text-center space-y-5">
-        <p className="md:w-1/2 mx-auto">
-          We design solutions that not only serve today but also shape a better
-          tomorrow.
-        </p>
       </div>
     </div>
   );
