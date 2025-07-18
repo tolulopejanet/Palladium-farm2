@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Main = () => {
   return (
-    <div className="px-12 pt-24 space-y-16">
+    <div className="lg:px-12 px-6 pt-24 space-y-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="flex flex-col justify-center">
           <h1 className="font-bold text-5xl mb-6 text-[#2B7810]">

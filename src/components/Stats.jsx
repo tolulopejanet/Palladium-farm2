@@ -4,7 +4,7 @@ const Stats = () => {
   return (
     <div className="w-full bg-[#F9FAFB] px-12 pt-24 pb-16">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-[#2B7810] mb-4">Our Impact</h2>
+        <h2 className="text-5xl font-bold text-[#2B7810] mb-4">Our Impact</h2>
         <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
           We are committed to transforming agriculture by connecting farmers,
           improving yields, and supporting sustainable food production across

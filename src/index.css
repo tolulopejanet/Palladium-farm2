@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .card {
-  @apply cursor-pointer bg-gradient-to-t from-white/20 w-72 h-64 rounded-xl shadow-xl self-end;
+  @apply bg-gradient-to-t from-white/20 w-72 h-64 rounded-xl shadow-xl self-end;
 }
 .card-active {
   @apply h-96;
@@ -14,4 +14,10 @@
 }
 .para {
   @apply mt-3;
+}
+.input-style {
+  @apply px-4 py-2 border-[1px] border-gray-400 rounded-md;
+}
+.primary-btn {
+  @apply hover:bg-green-900 text-white px-4 py-2 rounded-md bg-[#2B7810] cursor-pointer duration-200;
 }

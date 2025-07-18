@@ -3,15 +3,16 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Herosection from "./components/Herosection";
 import Navbar from "./components/Navbar";
-import About from "./routes/About";
-import Service from "./routes/Service";
-import Contact from "./routes/Contact";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
-import Features from "./components/Feature";
 import Stats from "./components/Stats";
 import ProductGallery from "./components/ProductGallery";
 import ProductCat from "./components/ProductCat";
+import About from "./components/About";
+import Order from "./components/Order";
+import Blog from "./components/Blog";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
 
 function Home() {
   return (
@@ -33,8 +34,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<About />} />
-        <Route path="/services" element={<Service />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
 
       <Footer />
