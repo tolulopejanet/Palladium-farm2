@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import prod1 from "../assets/hero2.jpg";
-import prod2 from "../assets/hero3.jpg";
+import prod1 from "../assets/cow1.jpeg";
+import prod2 from "../assets/greenpeppe.jpeg";
+import prod3 from "../assets/cow5.jpeg";
+import prod4 from "../assets/pawpaw.jpeg";
+import prod5 from "../assets/peppe.jpeg";
+import prod6 from "../assets/paultry.jpeg";
+import prod7 from "../assets/pawpaw2.jpeg";
+import prod8 from "../assets/peppe2.jpeg";
+import prod9 from "../assets/cow3.jpeg";
+import prod10 from "../assets/cow4.jpeg";
+import prod11 from "../assets/greenpeppe.jpeg";
+import prod12 from "../assets/cow4.jpeg";
+import prod13 from "../assets/hero3.jpg";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
@@ -9,12 +20,17 @@ const ProductGallery = () => {
   const catalogues = [
     { image: prod1, name: "Fresh Tomatoes" },
     { image: prod2, name: "Organic Lettuce" },
-    { image: prod1, name: "Bell Peppers" },
-    { image: prod2, name: "Cucumbers" },
-    { image: prod1, name: "Farm Eggs" },
-    { image: prod2, name: "Green Beans" },
-    { image: prod1, name: "Sweet Potatoes" },
-    { image: prod2, name: "Maize" },
+    { image: prod3, name: "Organic Lettuce" },
+    { image: prod4, name: "Bell Peppers" },
+    { image: prod5, name: "Cucumbers" },
+    { image: prod6, name: "Farm Eggs" },
+    { image: prod7, name: "Green Beans" },
+    { image: prod8, name: "Sweet Potatoes" },
+    { image: prod9, name: "Maize" },
+    { image: prod10, name: "Maize" },
+    { image: prod11, name: "Maize" },
+    { image: prod12, name: "Maize" },
+    { image: prod13, name: "Maize" },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
