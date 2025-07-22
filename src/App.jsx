@@ -13,6 +13,7 @@ import Order from "./components/Order";
 import Blog from "./components/Blog";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
+// import OrderSection from "./components/MainOrder";
 
 function Home() {
   return (
@@ -22,6 +23,7 @@ function Home() {
       <Stats />
       <ProductCat />
       <ProductGallery />
+      {/* <OrderSection /> */}
       {/* <Features /> */}
     </>
   );

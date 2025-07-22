@@ -34,7 +34,14 @@ const Order = () => {
             />
           </div>
 
-          <button className="primary-btn w-full">Order Now</button>
+          <a
+            href="https://whatsapp.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-green-400"
+          >
+            <button className="primary-btn w-full">Order Now</button>
+          </a>
         </div>
 
         <div className="col-span-2">

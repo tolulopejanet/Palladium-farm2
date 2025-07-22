@@ -1,61 +1,113 @@
 import React from "react";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaEnvelope,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
-const Footer = () => {
+const FooterSection = () => {
   return (
-    <footer className="bg-[#2B7810] text-white py-12 lg:px-12 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Column 1: Logo/Description */}
+    <div className="bg-[#2B7810] text-white pt-16 px-6 md:px-12">
+      {/* CTA Order Section */}
+      <div className="bg-white opacity-80 text-[#2B7810] rounded-xl p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden mb-16">
         <div>
-          <h2 className="text-2xl font-bold mb-4">Palladium Farms</h2>
-          <p className="text-sm text-gray-200">
-            Driving agricultural innovation and sustainability through modern
-            farming practices and community partnerships.
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">
+            Need fresh produce?
+          </h2>
+          <p className="text-lg">Place your order today with Palladium Farms</p>
+        </div>
+
+        <a
+          href="https://whatsapp.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#2B7810] text-white font-semibold px-6 py-3 mt-6 md:mt-0 rounded hover:bg-green-800 transition cursor-pointer"
+        >
+          Order Now
+        </a>
+
+        {/* Decorative shape */}
+        <div className="absolute right-0 bottom-0 w-40 h-40 bg-green-800 opacity-30 rounded-full -mb-20 -mr-20"></div>
+      </div>
+
+      {/* Footer Content */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-16">
+        {/* About Palladium */}
+        <div className="md:col-span-2 text-white opacity-80">
+          <h3 className="text-2xl font-bold mb-4 ">Palladium Farms</h3>
+          <p className="">
+            At Palladium Farms, we’re redefining agriculture through smart
+            farming practices, community support, and quality produce. Our
+            commitment is to provide fresh, healthy, and sustainable food
+            straight from our fields to your table.
           </p>
         </div>
 
-        {/* Column 2: Navigation Links */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-          <div className="flex flex-col space-y-2 text-sm">
-            <Link to="/aboutus" className="hover:text-green-200">
+        {/* Navigation Links */}
+        <div className="text-white opacity-80 text-center">
+          <h4 className="text-2xl font-bold mb-4">Explore</h4>
+          <div className="flex flex-col space-y-2 text-white">
+            <Link to="/aboutus" className="hover:font-bold">
               About Us
             </Link>
-            <Link to="/services" className="hover:text-green-200">
+            <Link to="/services" className="hover:font-bold">
               Services
             </Link>
-            <Link to="/blog" className="hover:text-green-200">
+            <Link to="/blog" className="hover:font-bold">
               Our Blog
             </Link>
-            <Link to="/contact" className="hover:text-green-200">
-              Contact
+            <Link to="/contact" className="hover:font-bold">
+              Contact Us
             </Link>
           </div>
         </div>
 
-        {/* Column 3: Social Media */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
-          <div className="flex gap-4">
-            <a href="#" className="text-white hover:text-green-200">
+        {/* Social Media */}
+        <div className="text-white opacity-80 text-center">
+          <h4 className="text-2xl font-bold mb-4">Connect With Us</h4>
+          <div className="flex space-x-4 justify-center">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-400"
+            >
               <FaFacebookF />
             </a>
-            <a href="#" className="text-white hover:text-green-200">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-400"
+            >
               <FaTwitter />
             </a>
-            <a href="#" className="text-white hover:text-green-200">
-              <FaInstagram />
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-400"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a
+              href="mailto:info@palladiumfarm.com"
+              className="hover:text-green-400"
+            >
+              <FaEnvelope />
             </a>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-white mt-10 pt-6 text-center text-sm text-gray-200">
+      {/* Copyright */}
+      <div className="text-center text-sm text-white opacity-80 border-t border-white pt-6 pb-10">
         &copy; {new Date().getFullYear()} Palladium Farms. All rights reserved.
       </div>
-    </footer>
+    </div>
   );
 };
 
-export default Footer;
+export default FooterSection;
