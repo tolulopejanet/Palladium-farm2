@@ -5,32 +5,32 @@ import prod2 from "../assets/greenpeppe.jpeg";
 import prod3 from "../assets/cow5.jpeg";
 import prod4 from "../assets/pawpaw.jpeg";
 import prod5 from "../assets/peppe.jpeg";
-import prod6 from "../assets/paultry.jpeg";
+import prod6 from "../assets/poultry.jpeg";
 import prod7 from "../assets/pawpaw2.jpeg";
 import prod8 from "../assets/peppe2.jpeg";
 import prod9 from "../assets/cow3.jpeg";
-import prod10 from "../assets/cow4.jpeg";
+import prod10 from "../assets/cow5.jpeg";
 import prod11 from "../assets/greenpeppe.jpeg";
-import prod12 from "../assets/cow4.jpeg";
-import prod13 from "../assets/hero3.jpg";
+import prod12 from "../assets/cow6.jpeg";
+import prod13 from "../assets/poultry.jpeg";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
 const ProductGallery = () => {
   const catalogues = [
-    { image: prod1, name: "Fresh Tomatoes" },
-    { image: prod2, name: "Organic Lettuce" },
-    { image: prod3, name: "Organic Lettuce" },
-    { image: prod4, name: "Bell Peppers" },
-    { image: prod5, name: "Cucumbers" },
+    { image: prod1, name: "Cow" },
+    { image: prod2, name: " Green pepper" },
+    { image: prod3, name: "Cow" },
+    { image: prod4, name: "Pawpaw" },
+    { image: prod5, name: "Fresh Pepper" },
     { image: prod6, name: "Farm Eggs" },
-    { image: prod7, name: "Green Beans" },
-    { image: prod8, name: "Sweet Potatoes" },
-    { image: prod9, name: "Maize" },
-    { image: prod10, name: "Maize" },
-    { image: prod11, name: "Maize" },
-    { image: prod12, name: "Maize" },
-    { image: prod13, name: "Maize" },
+    { image: prod7, name: "Pawpaw" },
+    { image: prod8, name: "Pepper" },
+    { image: prod9, name: "Cow" },
+    { image: prod10, name: "Cow" },
+    { image: prod11, name: "Green Pepper" },
+    { image: prod12, name: "Cow" },
+    { image: prod13, name: "Fresh Eggs" },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
