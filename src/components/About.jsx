@@ -13,22 +13,19 @@ const About = () => {
             Fresh. Local. Nutritious.
           </p>
           <p className="text-gray-600 mb-4">
-            At Palladium Farm, we believe agriculture is more than cultivation —
-            it’s the foundation of life, community, and sustainability. Rooted
+            At Palladium Farm, we believe agriculture is more than cultivation,
+            it is the foundation of life, community, and sustainability. Rooted
             in innovation and driven by impact, we are committed to providing
             high-quality, ethically sourced produce while empowering local
             farmers and preserving the environment.
           </p>
           <p className="text-gray-600 mb-6">
-            Our mission is to bridge the gap between traditional farming
-            practices and modern agricultural technologies, creating a seamless
-            farm-to-table experience for individuals and businesses alike. From
-            fresh crops to sustainable practices, every step we take is toward a
-            greener, healthier future.
+            <b> Our mission</b> is to become a one stop-shop for all
+            agricultural produce.
+            <br /> <b>Our vision</b> is to be a leading agribusiness,
+            cultivating a sustainable future through innovative farming
+            practices, quality products, and community engagement.
           </p>
-          <button className="bg-[#2B7810] text-white px-6 py-2 rounded hover:bg-green-700 transition">
-            Learn More
-          </button>
         </div>
         {/* Right: Image */}
         <div className="w-full lg:w-1/2">

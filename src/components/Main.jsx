@@ -1,5 +1,5 @@
 import React from "react";
-import Panel from "../assets/feature.jpg";
+import Panel from "../assets/farmer.jpg";
 import { FaArrowRight } from "react-icons/fa";
 // import Features from "./Feature";
 
