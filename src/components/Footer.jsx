@@ -57,7 +57,7 @@ const FooterSection = () => {
         <div className="md:col-span-2 text-white opacity-80">
           <h3 className="text-2xl font-bold mb-4">Palladium Farms</h3>
           <p>
-            At Palladium Farms, we’re redefining agriculture through smart
+            At Palladium Farms, we are redefining agriculture through smart
             farming practices, community support, and quality produce. Our
             commitment is to provide fresh, healthy, and sustainable food
             straight from our fields to your table.
