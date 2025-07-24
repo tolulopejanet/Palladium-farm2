@@ -1,6 +1,7 @@
 import React from "react";
 import { GiGrain, GiBarn, GiCow, GiWateringCan } from "react-icons/gi";
 import { FaTractor, FaSeedling } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -41,9 +42,29 @@ const services = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const Services = () => {
   return (
-    <div className="bg-white text-[#2B7810] pt-36 pb-16 px-6 lg:px-12">
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      variants={containerVariants}
+      className="bg-white text-[#2B7810] pt-36 pb-16 px-6 lg:px-12"
+    >
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold">Our Services</h2>
         <p className="text-lg mt-2 text-gray-600">
@@ -54,8 +75,10 @@ const Services = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {services.map((service, index) => (
-          <div
+          <motion.div
             key={index}
+            variants={cardVariants}
+            whileHover={{ scale: 1.03 }}
             className="bg-[#F7FDF4] rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
           >
             <div className="mb-4 text-[#2B7810] flex justify-center">
@@ -67,10 +90,10 @@ const Services = () => {
             <p className="text-gray-700 text-center text-sm">
               {service.description}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

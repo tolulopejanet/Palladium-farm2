@@ -23,8 +23,6 @@ function Home() {
       <Stats />
       <ProductCat />
       <ProductGallery />
-      {/* <OrderSection /> */}
-      {/* <Features /> */}
     </>
   );
 }

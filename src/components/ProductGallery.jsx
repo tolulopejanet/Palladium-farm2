@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
 import prod1 from "../assets/cow1.jpeg";
 import prod2 from "../assets/greenpeppe.jpeg";
 import prod3 from "../assets/cow5.jpeg";
@@ -19,7 +20,7 @@ import { Autoplay } from "swiper/modules";
 const ProductGallery = () => {
   const catalogues = [
     { image: prod1, name: "Cow" },
-    { image: prod2, name: " Green pepper" },
+    { image: prod2, name: "Green Pepper" },
     { image: prod3, name: "Cow" },
     { image: prod4, name: "Pawpaw" },
     { image: prod5, name: "Fresh Pepper" },
@@ -36,17 +37,35 @@ const ProductGallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
       className="px-6 md:px-12 pt-24 pb-16 bg-white text-[#2B7810]"
       id="gallery"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <h1 className="font-bold text-3xl md:text-4xl mb-4">Varieties</h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          viewport={{ once: true }}
+          className="font-bold text-3xl md:text-4xl mb-4"
+        >
+          Varieties
+        </motion.h1>
 
-        <p className="text-gray-600 mb-12 max-w-3xl mx-auto text-sm md:text-base">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-gray-600 mb-12 max-w-3xl mx-auto text-sm md:text-base"
+        >
           Explore our range of fresh and sustainable farm products cultivated
           with care.
-        </p>
+        </motion.p>
 
         <Swiper
           loop={true}
@@ -72,7 +91,13 @@ const ProductGallery = () => {
         >
           {catalogues.map((catalogue, i) => (
             <SwiperSlide key={i}>
-              <div className="h-96 flex items-end justify-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                viewport={{ once: true }}
+                className="h-96 flex items-end justify-center"
+              >
                 <div
                   className={`relative transition-all duration-500 ease-in-out rounded-xl overflow-hidden shadow-xl w-64 md:w-72 ${
                     activeIndex === i ? "h-96" : "h-64"
@@ -83,17 +108,16 @@ const ProductGallery = () => {
                     alt={`Product ${i}`}
                     className="w-full h-full object-cover"
                   />
-
                   <div className="absolute bottom-0 w-full bg-black/50 text-white text-center py-2 text-sm font-semibold">
                     {catalogue.name}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

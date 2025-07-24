@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   FaFacebookF,
   FaTwitter,
@@ -9,9 +10,21 @@ import { Link } from "react-router-dom";
 
 const FooterSection = () => {
   return (
-    <div className="bg-[#2B7810] text-white pt-16 px-6 md:px-12">
+    <motion.div
+      className="bg-[#2B7810] text-white pt-16 px-6 md:px-12"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       {/* CTA Order Section */}
-      <div className="bg-white opacity-80 text-[#2B7810] rounded-xl p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden mb-16">
+      <motion.div
+        className="bg-white opacity-80 text-[#2B7810] rounded-xl p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         <div>
           <h2 className="text-2xl md:text-3xl font-bold mb-2">
             Need fresh produce?
@@ -30,14 +43,20 @@ const FooterSection = () => {
 
         {/* Decorative shape */}
         <div className="absolute right-0 bottom-0 w-40 h-40 bg-green-800 opacity-30 rounded-full -mb-20 -mr-20"></div>
-      </div>
+      </motion.div>
 
       {/* Footer Content */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-16">
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-16"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
         {/* About Palladium */}
         <div className="md:col-span-2 text-white opacity-80">
-          <h3 className="text-2xl font-bold mb-4 ">Palladium Farms</h3>
-          <p className="">
+          <h3 className="text-2xl font-bold mb-4">Palladium Farms</h3>
+          <p>
             At Palladium Farms, we’re redefining agriculture through smart
             farming practices, community support, and quality produce. Our
             commitment is to provide fresh, healthy, and sustainable food
@@ -100,13 +119,19 @@ const FooterSection = () => {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Copyright */}
-      <div className="text-center text-sm text-white opacity-80 border-t border-white pt-6 pb-10">
+      <motion.div
+        className="text-center text-sm text-white opacity-80 border-t border-white pt-6 pb-10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        viewport={{ once: true }}
+      >
         &copy; {new Date().getFullYear()} Palladium Farms. All rights reserved.
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

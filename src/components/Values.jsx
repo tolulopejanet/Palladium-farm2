@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../assets/value.jpg";
+import { motion } from "framer-motion";
 
 const values = [
   {
@@ -43,35 +44,47 @@ const values = [
     desc: "We foster strong networks with farmers, experts, and organizations to co-create impactful agricultural solutions that benefit all.",
   },
 ];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15 },
+  }),
+};
+
 const Values = () => {
   return (
-    <section className="bg-green-50 py-16 lg:px-12 px-6">
+    <motion.section
+      className="bg-green-50 py-16 lg:px-12 px-6"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
       <div className="flex flex-col lg:flex-row items-center gap-10">
         {/* img section  */}
-        <div className="lg:w-1/2">
+        <motion.div className="lg:w-1/2" variants={fadeUp} custom={0}>
           <img
             src={img}
             alt="our value"
-            className="w-full h-[80vh]  rounded-lg shadow-lg object-cover"
+            className="w-full h-[80vh] rounded-lg shadow-lg object-cover"
           />
-        </div>
+        </motion.div>
 
         {/* content section  */}
-        <div className="lg:w-1/2">
+        <motion.div className="lg:w-1/2" variants={fadeUp} custom={0.5}>
           <h2 className="text-4xl font-bold text-[#2B7810] mb-8">Our Values</h2>
-          {/* <p className="text-gray-600 mb-4">
-            At Palladium, we have eight core values which the owners of the
-            Company hold in common and high esteem and strive to imbibe into all
-            employees of the company. These core values support the mission and
-            vision of the Farm. They will ensure that all employees are aligned
-            to the goals of the organization and know what is expected of them.
-            We have no doubt that imbibing these values will drive employees to
-            carry out their responsibilities excellently. Our core values are;
-          </p> */}
-          <div className="space-y-2">
+
+          <div className="space-y-6">
             {values.map((value, index) => (
-              <div key={index} className="flex items-start gap-5">
-                <div className="text-[#2B7810]  text-3xl font-bold">
+              <motion.div
+                key={index}
+                className="flex items-start gap-5"
+                variants={fadeUp}
+                custom={index * 0.2 + 1}
+              >
+                <div className="text-[#2B7810] text-3xl font-bold">
                   {value.number}
                 </div>
                 <div>
@@ -80,12 +93,12 @@ const Values = () => {
                   </h3>
                   <p className="text-gray-600 text-sm">{value.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

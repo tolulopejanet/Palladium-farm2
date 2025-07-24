@@ -1,21 +1,37 @@
 import React from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div className="pt-36 pb-12 px-6 lg:px-20 bg-green-50 min-h-screen text-[#1F4B2C]">
-      <div className="text-center mb-12">
+    <motion.div
+      className="pt-36 pb-12 px-6 lg:px-20 bg-green-50 min-h-screen text-[#1F4B2C]"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.div
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+      >
         <h2 className="text-4xl font-bold text-[#2B7810]">Get in Touch</h2>
         <p className="text-gray-600 mt-4 max-w-xl mx-auto">
-          Whether you are a farmer, customer, or enthusiast, we’d love to hear
-          from you. Reach out for inquiries, support, or to learn more about
-          sustainable farming.
+          Have a question, idea, or just want to connect? We’re here to help.
+          Reach out to us for inquiries, feedback, or partnerships. We look
+          forward to hearing from you.
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Contact Form */}
-        <div className="bg-white p-8 rounded-xl shadow-lg">
+        <motion.div
+          className="bg-white p-8 rounded-xl shadow-lg"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
           <form className="space-y-6">
             <div>
               <label className="block mb-2 text-sm font-semibold">
@@ -23,7 +39,7 @@ const Contact = () => {
               </label>
               <input
                 type="text"
-                placeholder="your name"
+                placeholder="Your name"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
               />
             </div>
@@ -52,15 +68,24 @@ const Contact = () => {
               type="submit"
               className="bg-[#2B7810] text-white px-6 py-3 rounded-md hover:bg-[#256d0d] transition"
             >
-              <a href="https://wa.me/2348100589346" target="_blank">
+              <a
+                href="https://wa.me/2348100589346"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Send Message
               </a>
             </button>
           </form>
-        </div>
+        </motion.div>
 
         {/* Contact Details */}
-        <div className="bg-[#2B7810] text-white p-8 rounded-xl shadow-lg flex flex-col justify-center">
+        <motion.div
+          className="bg-[#2B7810] text-white p-8 rounded-xl shadow-lg flex flex-col justify-center"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
           <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
           <div className="space-y-6 text-base">
             <div className="flex items-start">
@@ -81,11 +106,11 @@ const Contact = () => {
             </div>
           </div>
           <p className="mt-8 text-sm text-green-100">
-            We are available Monday to Saturday from 9:00am to 6:00pm.
+            We’re available Monday to Saturday from 9:00 AM to 6:00 PM.
           </p>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

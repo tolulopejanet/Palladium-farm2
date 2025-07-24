@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
+import { motion, AnimatePresence } from "framer-motion";
 import BlogImg from "../assets/blog.jpg";
 import CropImage from "../assets/crop_yield.jpg";
 import WomenFarming from "../assets/women_farming.jpg";
@@ -76,29 +77,59 @@ const Blog = () => {
 
   return (
     <section className="w-full bg-gray-50 pt-15 py-16 md:py-20">
+      {/* Header Image Section */}
       <div className="relative aspect-image overflow-hidden">
         <img
           src={BlogImg}
           className="w-full lg:h-[70vh] h-[50vh] object-cover"
+          alt="Blog header"
         />
         <div className="absolute inset-0 bg-black/60"></div>
-
         <div className="absolute inset-0 flex flex-col justify-center items-center">
-          <h2 className=" lg:text-7xl leading-snug font-bold mb-5 text-white text-3xl">
+          <motion.h2
+            className="lg:text-7xl leading-snug font-bold mb-5 text-white text-3xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             Welcome to Our Blog
-          </h2>
-          <p className="text-white text-center px-4">
+          </motion.h2>
+          <motion.p
+            className="text-white text-center px-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
             We offer everything you need to get started from helpful tips and
             tutorials
-          </p>
+          </motion.p>
         </div>
       </div>
+
+      {/* Blog Cards */}
       <div className="pt-8 pb-16 px-4 md:px-12 bg-white">
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+        <motion.div
+          className="grid gap-10 sm:grid-cols-2 md:grid-cols-3"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+        >
           {blogs.map((blog, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.4 }}
             >
               <img
                 src={blog.image}
@@ -118,44 +149,58 @@ const Blog = () => {
                   Read More
                 </button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {selectedBlog && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4">
-            <div className="bg-white max-w-2xl w-full p-6 rounded-xl relative overflow-y-auto max-h-[90vh] shadow-lg">
-              <button
-                className="absolute top-3 right-3 text-green-700 hover:text-green-900 text-2xl"
-                onClick={() => setSelectedBlog(null)}
+        {/* Blog Modal */}
+        <AnimatePresence>
+          {selectedBlog && (
+            <motion.div
+              className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 px-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div
+                className="bg-white max-w-2xl w-full p-6 rounded-xl relative overflow-y-auto max-h-[90vh] shadow-lg"
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ duration: 0.3 }}
               >
-                <MdClose />
-              </button>
-              <h3 className="text-2xl font-bold text-green-800 mb-1">
-                {selectedBlog.title}
-              </h3>
-              <p className="text-sm text-gray-500 mb-4">
-                By {selectedBlog.author}
-              </p>
-              <img
-                src={selectedBlog.image}
-                alt={selectedBlog.title}
-                className="w-full h-64 object-cover rounded-xl mb-4"
-              />
-              <p className="text-gray-700 whitespace-pre-line mb-4">
-                {selectedBlog.content}
-              </p>
-              <a
-                href={selectedBlog.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-green-700 hover:underline font-medium"
-              >
-                Learn more →
-              </a>
-            </div>
-          </div>
-        )}
+                <button
+                  className="absolute top-3 right-3 text-green-700 hover:text-green-900 text-2xl"
+                  onClick={() => setSelectedBlog(null)}
+                >
+                  <MdClose />
+                </button>
+                <h3 className="text-2xl font-bold text-green-800 mb-1">
+                  {selectedBlog.title}
+                </h3>
+                <p className="text-sm text-gray-500 mb-4">
+                  By {selectedBlog.author}
+                </p>
+                <img
+                  src={selectedBlog.image}
+                  alt={selectedBlog.title}
+                  className="w-full h-64 object-cover rounded-xl mb-4"
+                />
+                <p className="text-gray-700 whitespace-pre-line mb-4">
+                  {selectedBlog.content}
+                </p>
+                <a
+                  href={selectedBlog.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-green-700 hover:underline font-medium"
+                >
+                  Learn more →
+                </a>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

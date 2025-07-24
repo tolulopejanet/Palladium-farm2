@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Hero1 from "../assets/grow-1.jpg";
 import Hero2 from "../assets/harvest-1.jpg";
 import Hero3 from "../assets/soww.jpg";
 import { Link } from "react-router-dom";
+
 const slides = [
   {
     image: Hero1,
@@ -36,14 +38,27 @@ const Herosection = () => {
 
   return (
     <section className="relative w-full lg:h-screen h-[70vh] overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
-        style={{ backgroundImage: `url('${slides[current].image}')` }}
-      />
+      <AnimatePresence>
+        <motion.div
+          key={slides[current].image}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('${slides[current].image}')` }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        />
+      </AnimatePresence>
 
       {/* Text Content */}
       <div className="relative z-10 h-full flex items-center px-12">
-        <div className="bg-white opacity-80 p-4 lg:p-8 rounded-lg shadow-lg w-full max-w-md md:w-2/3 mt-50 md:mt-40">
+        <motion.div
+          className="bg-white opacity-80 p-4 lg:p-8 rounded-lg shadow-lg w-full max-w-md md:w-2/3 mt-50 md:mt-40"
+          key={slides[current].title}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <h1 className="lg:text-4xl text-2xl font-bold text-[#2B7810] lg:mb-4 mb-2">
             {slides[current].title}
           </h1>
@@ -55,11 +70,16 @@ const Herosection = () => {
               Learn More
             </button>
           </Link>
-        </div>
+        </motion.div>
       </div>
 
       {/* Dots */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+      <motion.div
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
         {slides.map((_, index) => (
           <button
             key={index}
@@ -69,7 +89,7 @@ const Herosection = () => {
             }`}
           />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
