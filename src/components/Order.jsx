@@ -35,7 +35,7 @@ const Order = () => {
           </div>
 
           <a
-            href="https://whatsapp.com"
+            href="https://wa.me/2348100589346"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-green-400"

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Hero1 from "../assets/grow-1.jpg";
 import Hero2 from "../assets/harvest-1.jpg";
 import Hero3 from "../assets/soww.jpg";
-
+import { Link } from "react-router-dom";
 const slides = [
   {
     image: Hero1,
@@ -50,9 +50,11 @@ const Herosection = () => {
           <p className="text-gray-800 lg:text-lg text-[14px]">
             {slides[current].description}
           </p>
-          <button className="lg:mt-6 mt-3 px-6 py-2 bg-[#2B7810] text-white rounded-full hover:bg-green-800 transition">
-            Learn More
-          </button>
+          <Link to="/aboutus">
+            <button className="lg:mt-6 mt-3 px-6 py-2 bg-[#2B7810] text-white rounded-full hover:bg-green-800 transition cursor-pointer">
+              Learn More
+            </button>
+          </Link>
         </div>
       </div>
 

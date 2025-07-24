@@ -36,7 +36,10 @@ const ProductGallery = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="px-6 md:px-12 pt-24 pb-16 bg-white text-[#2B7810]">
+    <div
+      className="px-6 md:px-12 pt-24 pb-16 bg-white text-[#2B7810]"
+      id="gallery"
+    >
       <div className="max-w-7xl mx-auto text-center">
         <h1 className="font-bold text-3xl md:text-4xl mb-4">Varieties</h1>
 
