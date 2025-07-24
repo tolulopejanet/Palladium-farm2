@@ -47,11 +47,14 @@ const Contact = () => {
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
               />
             </div>
+
             <button
               type="submit"
               className="bg-[#2B7810] text-white px-6 py-3 rounded-md hover:bg-[#256d0d] transition"
             >
-              Send Message
+              <a href="https://wa.me/2348100589346" target="_blank">
+                Send Message
+              </a>
             </button>
           </form>
         </div>
@@ -70,7 +73,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center">
               <FaPhoneAlt className="text-xl mr-4" />
-              <p>+234 812 345 6789</p>
+              <p>0810 058 9346</p>
             </div>
             <div className="flex items-center">
               <FaEnvelope className="text-xl mr-4" />

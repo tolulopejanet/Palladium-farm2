@@ -20,7 +20,7 @@ const FooterSection = () => {
         </div>
 
         <a
-          href="https://whatsapp.com"
+          href="https://wa.me/2349125437125"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#2B7810] text-white font-semibold px-6 py-3 mt-6 md:mt-0 rounded hover:bg-green-800 transition cursor-pointer"
