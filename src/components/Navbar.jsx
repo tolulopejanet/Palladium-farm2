@@ -71,7 +71,7 @@ const Navbar = () => {
           <div className="lg:hidden">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:green-300"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:green-300 cursor-pointer"
             >
               {!isMenuOpen ? (
                 <MdMenu className=" w-6 h-6" />
@@ -97,7 +97,7 @@ const Navbar = () => {
               <Link
                 to="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-4 hover:bg-green-700 rounded"
+                className="block px-4 hover:bg-white hover:text-[#2B7810] rounded"
               >
                 Home
               </Link>
@@ -105,7 +105,7 @@ const Navbar = () => {
               <Link
                 to="/aboutus"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-4 hover:bg-green-700 rounded"
+                className="block px-4 hover:bg-white hover:text-[#2B7810] rounded"
               >
                 About Us
               </Link>
@@ -113,7 +113,7 @@ const Navbar = () => {
               <Link
                 to="/services"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-4 hover:bg-green-700 rounded"
+                className="block px-4 hover:bg-white hover:text-[#2B7810] rounded"
               >
                 Services
               </Link>
@@ -121,7 +121,7 @@ const Navbar = () => {
               <Link
                 to="/blog"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-4 hover:bg-green-700 rounded"
+                className="block px-4 hover:bg-white hover:text-[#2B7810] rounded"
               >
                 Blog
               </Link>
@@ -129,7 +129,7 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-4 pb-2 hover:bg-green-700 rounded"
+                className="block px-4 pb-2 hover:bg-white hover:text-[#2B7810] rounded"
               >
                 Contact Us
               </Link>
@@ -137,7 +137,7 @@ const Navbar = () => {
               <Link
                 to="/order"
                 onClick={() => setIsMenuOpen(false)}
-                className="px-4 py-2 mt-6 border border-white rounded hover:bg-green-700"
+                className="px-4 py-2 mt-6 border border-white rounded hover:bg-white hover:text-[#2B7810]"
               >
                 Orders
               </Link>

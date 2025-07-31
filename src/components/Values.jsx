@@ -46,7 +46,7 @@ const values = [
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: (i = 1) => ({
     opacity: 1,
     y: 0,
@@ -57,45 +57,67 @@ const fadeUp = {
 const Values = () => {
   return (
     <motion.section
-      className="bg-green-50 py-16 lg:px-12 px-6"
+      className="bg-green-50 py-20 px-6 lg:px-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <div className="flex flex-col lg:flex-row items-center gap-10">
-        {/* img section  */}
-        <motion.div className="lg:w-1/2" variants={fadeUp} custom={0}>
+      <motion.h2
+        className="text-5xl font-bold text-center text-[#2B7810] mb-4"
+        variants={fadeUp}
+        custom={0}
+      >
+        Our Core Values
+      </motion.h2>
+      <motion.p
+        className="text-center max-w-3xl mx-auto text-gray-700 mb-12"
+        variants={fadeUp}
+        custom={0.3}
+      >
+        At Palladium Farm, our values shape every decision and action. They
+        reflect our commitment to the land, our people, and the future of food.
+      </motion.p>
+
+      <div className="flex flex-col lg:flex-row gap-12">
+        {/* Left image */}
+        <motion.div className="lg:w-1/2" variants={fadeUp} custom={0.5}>
           <img
             src={img}
-            alt="our value"
-            className="w-full h-[80vh] rounded-lg shadow-lg object-cover"
+            alt="values"
+            className="w-full h-[80vh] object-cover rounded-xl shadow-xl"
           />
         </motion.div>
 
-        {/* content section  */}
-        <motion.div className="lg:w-1/2" variants={fadeUp} custom={0.5}>
-          <h2 className="text-4xl font-bold text-[#2B7810] mb-8">Our Values</h2>
-
-          <div className="space-y-6">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                className="flex items-start gap-5"
-                variants={fadeUp}
-                custom={index * 0.2 + 1}
-              >
-                <div className="text-[#2B7810] text-3xl font-bold">
-                  {value.number}
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-700">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">{value.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        {/* Right values */}
+        <motion.div
+          className="lg:w-1/2 grid md:grid-cols-2 gap-6"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+        >
+          {values.map((value, index) => (
+            <motion.div
+              key={index}
+              className="bg-white-400 p-5 rounded-xl shadow-black shadow-md"
+              variants={fadeUp}
+              custom={index * 0.2 + 1}
+            >
+              <div className="text-[#2B7810] text-xl font-bold mb-1">
+                {value.number}
+              </div>
+              <h3 className="text-lg font-semibold text-[#2B7810]">
+                {value.title}
+              </h3>
+              <p className="text-gray-600 text-sm">{value.desc}</p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </motion.section>
