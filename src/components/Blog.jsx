@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 import BlogImg from "../assets/blog.jpg";
+import GradImg from "../assets/grad.jpg";
 import CropImage from "../assets/crop_yield.jpg";
 import WomenFarming from "../assets/women_farming.jpg";
 import NewFarmer from "../assets/new_farmers.jpg";
@@ -11,6 +12,25 @@ import StartFarm from "../assets/start_farm.png";
 
 const Blog = () => {
   const blogs = [
+    {
+      title: "Graduate Management Programs: Shaping Tomorrow’s Agrileaders",
+      author: "Palladium Farm",
+      image: GradImg,
+      preview:
+        "Want to lead in agriculture? Here’s how our graduate program is preparing Nigeria’s next agribusiness experts...",
+      content:
+        "The Graduate Management Program offers hands-on training and mentoring for young professionals who want to build careers in agribusiness and agri-tech. Through structured rotations across departments — from field operations to supply chain — participants gain real-world experience, leadership exposure, and problem-solving skills to thrive in Africa’s agricultural sector. Chinonso Emefiele, one of our recent graduates, shares how the program helped her transition from academic theory to business execution.",
+    },
+    {
+      title: "Production from Scratch: How We Help You Build Your Farm Vision",
+      author: "Palladium Farm",
+      image: StartFarm,
+      preview:
+        "Starting a new farm or facility? Our production support team can take you from land to launch...",
+      content:
+        "Many entrepreneurs have the passion for agriculture but lack the technical expertise to bring their ideas to life. Our Production Support services offer end-to-end guidance: site evaluation, facility design, equipment sourcing, installation, and staff training. Whether you're building a processing plant or starting a poultry farm, we partner with you every step of the way. Engr. Bamidele Okafor shares real-life case studies of how we've helped startups establish fully functional agribusiness operations from scratch.",
+      link: "https://agrifarming.in/farm-setup-guide",
+    },
     {
       title: "Improving Crop Yield with Better Soil Practices",
       author: "Dr. Adesola Bakare",
