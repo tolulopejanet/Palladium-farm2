@@ -19,7 +19,7 @@ const Blog = () => {
       preview:
         "Want to lead in agriculture? Here’s how our graduate program is preparing Nigeria’s next agribusiness experts...",
       content:
-        "The Graduate Management Program offers hands-on training and mentoring for young professionals who want to build careers in agribusiness and agri-tech. Through structured rotations across departments — from field operations to supply chain — participants gain real-world experience, leadership exposure, and problem-solving skills to thrive in Africa’s agricultural sector. Chinonso Emefiele, one of our recent graduates, shares how the program helped her transition from academic theory to business execution.",
+        "The Graduate Management Program offers hands-on training and mentoring for young professionals who want to build careers in agribusiness and agri-tech. Through structured rotations across departments — from field operations to supply chain — participants gain real-world experience, leadership exposure, and problem-solving skills to thrive in Africa’s agricultural sector.",
     },
     {
       title: "Production from Scratch: How We Help You Build Your Farm Vision",
