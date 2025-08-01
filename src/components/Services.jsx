@@ -1,99 +1,109 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { GiGrain, GiBarn, GiCow, GiWateringCan } from "react-icons/gi";
 import { FaTractor, FaSeedling } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 const services = [
   {
-    icon: <FaTractor size={40} />,
-    title: "Mechanized Farming",
+    icon: <FaSeedling size={20} />,
+    title: "Crop Farming",
     description:
-      "We offer mechanized farming solutions to increase efficiency and yield for farmers, using modern tools and sustainable practices.",
+      "We specialize in greenhouse cultivation, fruit and vegetable farming, and sustainable cash crops.",
   },
   {
-    icon: <GiBarn size={40} />,
-    title: "Agro-Processing",
+    icon: <GiCow size={20} />,
+    title: "Livestock Farming",
     description:
-      "Our agro-processing service transforms raw farm produce into finished or semi-finished products, ensuring longer shelf life and higher value.",
+      "We specialize in poultry farming, aqua farming, and modern ruminant farming with emphasis on zero-grazing systems.",
   },
   {
-    icon: <GiCow size={40} />,
-    title: "Animal Husbandry",
+    icon: <GiGrain size={20} />,
+    title: "Feedmill Production",
     description:
-      "We rear livestock such as cattle, poultry, and goats under expert care, providing high-quality animal products for the market.",
+      "High-quality feed formulation and production for livestock and poultry with balanced nutrition.",
   },
   {
-    icon: <GiWateringCan size={40} />,
-    title: "Irrigation Systems",
+    icon: <GiWateringCan size={20} />,
+    title: "Agricultural Recycling",
     description:
-      "From drip to sprinkler systems, our irrigation services help optimize water usage, especially in dry seasons, ensuring healthy crop growth.",
+      "Innovative recycling of agricultural waste for organic fertilizers, energy, and soil health improvement.",
   },
   {
-    icon: <GiGrain size={40} />,
-    title: "Seed Supply",
+    icon: <FaTractor size={20} />,
+    title: "Sales & Mechanization",
     description:
-      "We supply farmers with quality, disease-resistant seeds to promote better germination rates and increase food security.",
+      "From farm produce to mechanized equipment, we provide access to quality tools and products.",
   },
   {
-    icon: <FaSeedling size={40} />,
-    title: "Training & Consultancy",
+    icon: <GiBarn size={20} />,
+    title: "Farm Support Services",
     description:
-      "We provide expert guidance to farmers on sustainable agricultural practices, agribusiness, and farm management through training and mentorship.",
+      "Expert advisory, training, soil testing, and resource planning to support farmers at every stage.",
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const cardVariants = {
+const fadeIn = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  visible: (custom) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: custom * 0.2, duration: 0.6, ease: "easeOut" },
+  }),
 };
 
 const Services = () => {
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      variants={containerVariants}
-      className="bg-white text-[#2B7810] pt-36 pb-16 px-6 lg:px-12"
-    >
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold">Our Services</h2>
-        <p className="text-lg mt-2 text-gray-600">
-          Providing end-to-end solutions for modern farming, agribusiness, and
-          food sustainability.
-        </p>
-      </div>
+  const left = services.slice(0, 3);
+  const right = services.slice(3);
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            variants={cardVariants}
-            whileHover={{ scale: 1.03 }}
-            className="bg-[#F7FDF4] rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+  return (
+    <section className="bg-[#f4f9f5] pb-20 pt-36 px-6 md:px-20">
+      <motion.h2
+        className="text-4xl md:text-5xl font-bold text-center text-[#2B7810] mb-16"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn}
+        custom={0}
+      >
+        What We Do
+      </motion.h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-16">
+        {[left, right].map((group, colIndex) => (
+          <div
+            key={colIndex}
+            className="relative lg:border-l-2 border-[#2B7810]"
           >
-            <div className="mb-4 text-[#2B7810] flex justify-center">
-              {service.icon}
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-center">
-              {service.title}
-            </h3>
-            <p className="text-gray-700 text-center text-sm">
-              {service.description}
-            </p>
-          </motion.div>
+            {group.map((service, i) => (
+              <motion.div
+                key={i}
+                className="relative mb-12"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeIn}
+                custom={i + colIndex * 3 + 1}
+              >
+                {/* Connector Circle */}
+                <div className="absolute -left-[15px] top-1 w-6 h-6 bg-white border-2 border-[#2B7810] rounded-full flex items-center justify-center text-[#2B7810] shadow">
+                  {service.icon}
+                </div>
+
+                {/* Content */}
+                <div className="pl-6">
+                  <h3 className="text-xl font-bold text-[#2B7810] mb-1">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-700 text-base leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         ))}
       </div>
-    </motion.div>
+    </section>
   );
 };
 
