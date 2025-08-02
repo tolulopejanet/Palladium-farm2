@@ -21,3 +21,12 @@
 .primary-btn {
   @apply hover:bg-green-900 text-white px-4 py-2 rounded-md bg-[#2B7810] cursor-pointer duration-200;
 }
+.chatbot-button {
+  background-color: #2b7810;
+  color: white;
+  border-radius: 9999px;
+  padding: 6px 12px;
+  font-size: 0.875rem;
+  margin: 4px;
+  cursor: pointer;
+}

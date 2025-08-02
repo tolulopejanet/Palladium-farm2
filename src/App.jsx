@@ -13,7 +13,7 @@ import Order from "./components/Order";
 import Blog from "./components/Blog";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
-// import OrderSection from "./components/MainOrder";
+import ChatToggle from "./components/ChatToggle";
 
 function Home() {
   return (
@@ -41,6 +41,7 @@ function App() {
       </Routes>
 
       <Footer />
+      <ChatToggle />
     </>
   );
 }
