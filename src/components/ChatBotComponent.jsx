@@ -12,12 +12,12 @@ import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
 
 const chatbotResponses = {
-  "How do I start farming?":
-    "To start farming, identify a suitable location, test the soil, choose a profitable crop, and create a business plan.",
-  "What crops grow best in Nigeria?":
-    "Crops like cassava, maize, rice, yam, tomatoes, and vegetables thrive in Nigeria depending on the region.",
-  "How do I access funding for my farm?":
-    "You can access funding through agricultural banks, government grants, and private sector initiatives.",
+  "How can we locate you?":
+    "Palladium Farm, Otere-Apena Village, Pentagon Estate Road, Lagos-Ibadan Expressway, Ogun State, Nigeria.",
+  "How can we reach you on WhatsApp?":
+    "+2349111027424",
+  "What produce is currently available on the farm?":
+    "Eggs, Poultry Birds, Livestock, Maize, Sweet corn, Pineapple, Cucumber",
 };
 
 const ChatbotComponent = () => {
@@ -46,12 +46,33 @@ const ChatbotComponent = () => {
         transition={{ type: "spring", stiffness: 300 }}
         className="fixed bottom-6 right-6 z-50"
       >
-        <button
+        <motion.button
           onClick={toggleChat}
+          animate={
+            !isOpen
+              ? {
+                  scale: [1, 1.1, 1],
+                  boxShadow: [
+                    "0 0 0 rgba(0,0,0,0)",
+                    "0 0 10px rgba(34,197,94,0.5)",
+                    "0 0 0 rgba(0,0,0,0)",
+                  ],
+                }
+              : {}
+          }
+          transition={
+            !isOpen
+              ? {
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }
+              : {}
+          }
           className="bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 focus:outline-none"
         >
           {isOpen ? <MdClose size={24} /> : <FaRobot size={24} />}
-        </button>
+        </motion.button>
       </motion.div>
 
       <AnimatePresence>

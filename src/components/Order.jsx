@@ -44,7 +44,7 @@ const Order = () => {
           </div>
 
           <a
-            href="https://wa.me/2348100589346"
+            href="https://wa.me/2349111027424"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-green-400"

@@ -84,7 +84,7 @@ const Values = () => {
           <img
             src={img}
             alt="values"
-            className="w-full h-[80vh] object-cover rounded-xl shadow-xl"
+            className="w-full h-[50vh] lg:h-[90vh] object-cover rounded-xl shadow-xl"
           />
         </motion.div>
 

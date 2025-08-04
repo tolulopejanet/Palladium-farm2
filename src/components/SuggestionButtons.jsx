@@ -2,9 +2,9 @@
 import React from "react";
 
 const suggestions = [
-  "How do I start farming?",
-  "What crops grow best in Nigeria?",
-  "How do I access funding for my farm?",
+  "How can we locate you?",
+  "How can we reach you on WhatsApp?",
+  "What produce is currently available on the farm?",
 ];
 
 const SuggestionButtons = ({ onSelect }) => {

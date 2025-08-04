@@ -91,14 +91,13 @@ const Contact = () => {
             <div className="flex items-start">
               <FaMapMarkerAlt className="text-xl mr-4 mt-1" />
               <p>
-                Palladium Farm
-                <br />
-                Nigeria
+                Palladium Farm, Otere-Apena Village, Pentagon Estate Road,<br />
+Lagos-Ibadan Expressway, Ogun State.
               </p>
             </div>
             <div className="flex items-center">
               <FaPhoneAlt className="text-xl mr-4" />
-              <p>0810 058 9346</p>
+              <p>09111027424</p>
             </div>
             <div className="flex items-center">
               <FaEnvelope className="text-xl mr-4" />
